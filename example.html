@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-  <title>Example | Mathigon Slideshows</title>
+  <title>Mathigon Slideshows  |  Example</title>
   <meta name="description" content="Mathigon Slideshows is HTML and JavaScript framework that can be used to create some of the most beautiful slideshows on the web.">
   <meta name="keywords"    content="Slideshows PowerPoint Keynote Presentations HTML JavaScript CSS Web">
 
@@ -39,18 +39,24 @@
   </script> 
 
   <!-- Splash Screens -->
-  <link rel="apple-touch-startup-image"                   href="images/Splash320x460.png"   /> <!-- iPhone Portrait -->
-  <link rel="apple-touch-startup-image" sizes="640x960"   href="images/Splash640x960.png"   /> <!-- Retina iPhone Portrait -->
-  <link rel="apple-touch-startup-image" sizes="640x1096"  href="images/Splash640x1096.png"  /> <!-- iPhone 5 Portrait -->
-  <link rel="apple-touch-startup-image" sizes="768x1004"  href="images/Splash768x1004.png"  /> <!-- iPad Portrait -->
-  <link rel="apple-touch-startup-image" sizes="1024x748"  href="images/Splash1024x748.png"  /> <!-- iPad Landscape -->
-  <link rel="apple-touch-startup-image" sizes="1536x2008" href="images/Splash1536x2008.png" /> <!-- iPad Retina Portrait -->
-  <link rel="apple-touch-startup-image" sizes="2048x1496" href="images/Splash2048x1496.png" /> <!-- iPad Retina Landscape -->
-   
+  <link rel="apple-touch-startup-image" href="images/Splash320x460.png"   media="(device-width: 320px)" > <!-- iPhone Portrait -->
+  <link rel="apple-touch-startup-image" href="images/Splash640x960.png"   media="(device-width: 320px)  and (-webkit-device-pixel-ratio: 2)"> <!-- Retina iPhone Portrait -->
+  <link rel="apple-touch-startup-image" href="images/Splash640x1096.png"  media="(device-width: 320px)  and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5 Portrait -->
+  <link rel="apple-touch-startup-image" href="images/Splash768x1004.png"  media="(device-width: 768px)  and (orientation: portrait)" >        <!-- iPad Portrait -->
+  <link rel="apple-touch-startup-image" href="images/Splash1024x748.png"  media="(device-width: 768px)  and (orientation: landscape)">        <!-- iPad Landscape -->
+  <!--
+  <link rel="apple-touch-startup-image" href="images/Splash1536x2008.png" media="(device-width: 1536px) and (orientation: portrait)  and (-webkit-device-pixel-ratio: 2)"> <!-- iPad Retina Portrait
+  <link rel="apple-touch-startup-image" href="images/Splash2048x1496.png" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)"> <!-- iPad Retina Landscape
+  -->
+        
   <!-- Stylesheets -->
   <link rel="stylesheet" href="stylesheets/main.css">
-  <link rel="stylesheet" href="stylesheets/styles.css">
   
+  <!--  Additional Styles -->
+  <style>
+	.feature { width: 39%; height: auto; position: absolute; border-radius: 8px; box-shadow: 0 2px 10px #000; -webkit-box-shadow: 0 2px 10px #000; -moz-box-shadow: 0 2px 10px #000; display: none;}
+  </style>
+    
   <!-- Webfonts -->
   <script type="text/javascript" src="http://use.typekit.com/qyp7gff.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script> 
@@ -86,10 +92,8 @@
     </div>
     <div id="pbar">
       <div id="pbar_box">
-        <div id="pbar_slider"><div id="pbar_handle" class="handle">
-          <div id="pbar_prevbox"></div>
-          <div id="pbar_arrow"  ></div>
-        </div></div>
+	    <input type="text" id="pinp_slider"/>
+		<div id="pbar_slider"></div>
       </div>
     </div>
   </footer>
@@ -105,7 +109,7 @@
   <div class="infobox box_scroll" id="info_help">
     <div class="infobox_wrapper">
       <h1>Help</h1>
-      <p>This slideshow  is best viewed in <a href="https://www.google.com/chrome/">Google Chrome</a> or other webkit browsers. It is also mobile capable &#8211; try opening it on your iPad!</p>
+      <p>This slideshow is best viewed in <a href="https://www.google.com/chrome/">Google Chrome</a> or other webkit browsers. Unfortnately neither Firefox nor Internet Explorers support all features and effects.</p>
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td>Step forward</td>
@@ -133,28 +137,30 @@
   		</tr>
   		<tr>
     	  <td>Narration</td>
-    	  <td>audio button in toolbar<br>this applied to narration, not audio or video elements</td>
+    	  <td>audio button in toolbar<br>this applies to narration, not audio or video elements</td>
   		</tr>
   		<tr>
     	  <td>Full Screen</td>
-    	  <td>full screen buttion in toolbar<br>exit using esc key or button in toolbar</td>
+    	  <td>full screen button in toolbar<br>exit using esc key or button in toolbar</td>
   		</tr>
   	  </table>
-      <h1>Advise on Using this Slideshow</h1>
-      <p>This slideshow  is best viewed in <a href="https://www.google.com/chrome/">Google Chrome</a> or other webkit browsers. It is also mobile capable &#8211; try opening it on your iPad!</p>
       <h1>Credits</h1>
-      <p>This slideshow  is best viewed in <a href="https://www.google.com/chrome/">Google Chrome</a> or other webkit browsers. It is also mobile capable &#8211; try opening it on your iPad!</p>
+      <p>&copy; Mathigon / Philipp Legner.</p>
     </div>
     <div class="lbclose"></div>
   </div>
   
   <div class="infobox box_scroll" id="info_share">
     <div class="infobox_wrapper">
-      <h1>Spread the Word</h1>
-      <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.mathigon.org%2Fslideshows%2Fexample&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:35px;" allowTransparency="true"></iframe>      <p>FACEBOOK  |  TWITTER  |  STUMBLEUPON  |  REDDIT</p>
-      <h1>Embed Slideshow</h1>
-      <p>Use the following code to embed this slideshow in a blog or website. The presentation adjusts to the frame but should have a size of at least 640px by 360px.</p>
-      <textarea readonly>&lt;iframe src=&quot;http://www.mathigon.org/slideshows/christmas&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; height=&quot;405px&quot; width=&quot;720px&quot;&gt;&lt;/iframe&gt;</textarea>
+      <h1>Share Slideshow</h1>
+	  <p><span class="sleft"><iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.mathigon.org%2Fslideshows&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:52px; height:28px;" allowTransparency="true"></iframe></span>
+      <span class="sleft"><a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-size="large" >Tweet</a></span>
+      <span class="sleft"><a href="http://www.reddit.com/submit" onclick="window.location = 'http://www.reddit.com/submit?url=' + encodeURIComponent(window.location); return false"> <img src="http://www.reddit.com/static/spreddit8.gif" alt="submit to reddit" width="109" height="28" border="0"/> </a></span>
+      <span class="sleft"><su:badge layout="6"></su:badge></span></p>
+      <p>Use the following code to embed this slideshow in a blog or website. It should have a size of at least 800px by 450px.</p>
+      <textarea readonly>&lt;iframe src=&quot;http://www.mathigon.org/slideshows/example.html&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; height=&quot;405px&quot; width=&quot;720px&quot;&gt;&lt;/iframe&gt;</textarea>
+      <h1>Mobile Devices</h1>
+      <p>This slideshow is optimised for mobile devices like iPad and iPhone and is <a href="http://www.apple.com/ios/add-to-home-screen/">Webb App capable</a>. To hide the browser toolbars, click 'share' and 'add to home screen'. Now click on the new icon to open the slideshow in full screen mode.</p>
     </div>
     <div class="lbclose"></div>
   </div>
@@ -163,63 +169,73 @@
 
   <div id="stage" data-ratio="0.5625" ontouchstart="touchStart(event,'stage');"  ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);">
 
-    <section class="s_shadow1" data-transition="via" data-duration="2000" style="background: #C00; color: #FFF; background-image: url(images/textures/walnut-wood.jpg);">
-    
-      <h1 class="title"   >Mathigon Slideshows</h1>
-      <h2 class="subtitle">Syntax, Styles and Animations</h1>
+    <section class="s_shadow1" data-transition="fade" data-duration="1000" style="background: #000; color: #FFF; background-image: url(resources/example/fireworks.jpg);">
 
-      <audio class="saudio"><source src="resources/slide1-0.mp3" type="audio/mpeg"></audio>
-      <div   class="pnotes"><p>Welcome! This presentation will give you an overview on the Mathigon Slideshows framework which can be used to create beautiful slideshows for websites.</p><p>Press space to continue or click anywhere on the slide to show the toolbars for more options.</p></div>
+      <img id="title" src="resources/example/title.png" width="1172" height="242" alt="fruit" style="width: 81.39%; height: auto; left: 8.44%; top: 23.56%; position: absolute; display: none;">
+    
+      <!--<h1 class="title"   >Mathigon Slideshows</h1>
+      <h2 class="subtitle">Syntax, Styles and Animations</h1>-->
+
+      <div   class="pnotes">
+        <p>Welcome!<br>Mathigon Slideshows is a powerful framework for creating HTML slideshows on the web. It was initially created as part of the Mathigon project to make engaging mathematics lessons that can be watched by students or be presented by teachers in classrooms.</p>
+        <p>Click anywhere on the slide to show the toolbars and use the top buttons to toggle narration and presenter notes. Use the keyboard arrows to navigate; on mobile devices simply swipe.</p>
+      </div>
+      
+      <audio class="saudio"><source src="resources/intro.mp3" type="audio/mpeg"></audio>
+      
+	  <script> var xSteps0 = function(x) { switch(x) {
+		  case 0:     setTimeout( function(){$('#title').buildIn('lenseFlare',2000);}, 1000 ); break;
+		  case 'x':   $('#title').css('display','none'); break;
+		  case 'max': return 0;
+	  }} </script>
+
     </section>  
   
     <!-- =============================================================================== -->
   
-    <section class="s_shadow" data-transition="fade" data-duration="2000" style="background-image: url(images/textures/rust.jpg)" data-title="Introduction">
+    <section class="" data-transition="color" data-duration="2000" style="background-image: url(resources/example/fireworks.jpg)" data-title="Introduction">
 
-      <h1>Introduction</h1>
-      <div class="col_left">        
-        <p><em>Mathigon Slideshows</em> is an HTML and JavaScript framework that can be used to create beautiful and widely compatible slideshows on websites. These can take up the entire page or be embedded in smaller iframes.</p>
-        <p>The framework was initially created to create engaging mathematics lessons that can be watched by students and be presented by teachers.</p>
-        <p>You can download all source files from <a href="http://www.mathigon.org/slideshows">mathigon.org/slideshows</a>. An interactive coding-less user interface, as well as the possibility to pass in JSON and XML files rather than HTML, are in preperation.</p>
+      <h1 id="f0" style="color: #FFF; position: absolute; left: 30%; top: 3%; text-shadow: 0 1px 8px #000, 0 1px 8px #000; font-size: 3em;">Features</h1>
+
+      <img id="f1" class="feature" src="resources/example/features/f1.png" width="500" height="200" alt="" style="top: 27%; left: 7%;">
+      <img id="f2" class="feature" src="resources/example/features/f2.png" width="500" height="200" alt="" style="top: 44%; left: 9%;">
+      <img id="f3" class="feature" src="resources/example/features/f3.png" width="500" height="200" alt="" style="top: 59%; left: 8%;">
+      <img id="f4" class="feature" src="resources/example/features/f4.png" width="500" height="200" alt="" style="top: 74%; left: 11%;">
+      <img id="f5" class="feature" src="resources/example/features/f5.png" width="500" height="200" alt="" style="top: 29%; left: 50%;">
+      <img id="f6" class="feature" src="resources/example/features/f6.png" width="500" height="200" alt="" style="top: 42%; left: 57%;">
+      <img id="f7" class="feature" src="resources/example/features/f7.png" width="500" height="200" alt="" style="top: 57%; left: 55%;">
+      <img id="f8" class="feature" src="resources/example/features/f8.png" width="500" height="200" alt="" style="top: 67%; left: 52%;">
+ 
+      <div class="pnotes"><p>Slides can consist of any HTML content, including videos, forms or iframes. They can be customised entirely using JavaScript and CSS.</p></div>
+      <div class="pnotes"><p>You can embed spoken narration as well as presenter notes, and users and disable these independently.</p></div>
+      <div class="pnotes"><p>Mathigon Slideshows are fully mobile and WebApp capable. They fluidly adjust to the window or screen size: try resizing your browser!</p></div>
+      <div class="pnotes"><p>With Mathigon Slideshows included are many amazing effects, animations, transitions and designs. We are constantly adding more, and it is easy to customise them in JavaScript.</p></div>
+      <div class="pnotes"><p>You can navigate the slideshow using keyboard shortcuts, the toolbars, a slider or mobile gestures.</p></div>
+      <div class="pnotes"><p>You can share slideshows via Facebook, Twitter and other Social Sites without leaving the slideshow, or embed them in your website or blog.</p></div>
+      <div class="pnotes"><p>You can link to individual slides by using hashes in the URL.</p></div>
+      <div class="pnotes">
+        <p>And the slideshows even have a full screen button.</p>
+        <p>This presentation gives an overview of the underlying syntax and how you can create your own slideshows. Remember to download all source files from <a href="http://www.mathigon.org/slideshows">mathigon.org/slideshows</a>.</p>
       </div>
-      <div class="col_right">
-        <img src="resources/fruit.jpg" width="640" height="626" alt="fruit">
-      </div>
-      
+ 
       <script> var xSteps1 = function(x) { switch(x) {
-		  case 0:     alert('Step 1'); break;
-		  case 1:     alert('Step 1'); break;
-		  case 'max': return 1;        break;
+		  case 0:     $('#f0').buildIn('fade',1000);
+		              $('#f1').buildIn('flipHorizontal',1000); break;
+		  case 1:     $('#f2').buildIn('blur',1000); break;
+		  case 2:     $('#f3').buildIn('rotateDown',1000); break;
+		  case 3:     $('#f4').buildIn('flyLeft',1000); break;
+		  case 4:     $('#f5').buildIn('drop',1000); break;
+		  case 5:     $('#f6').buildIn('pop',1000); break;
+		  case 6:     $('#f7').buildIn('spinUp',1000); break;
+		  case 7:     $('#f8').buildIn('wipeLeft',1000); break;
+		  case 'x':   $('.feature').css('display','none'); break;
+		  case 'max': return 7; break;
 	  }} </script>
-      <audio class="saudio"><source src="resources/slide2.mp3" type="audio/mpeg"></audio>
-      <audio class="saudio"><source src="resources/slide2.mp3" type="audio/mpeg"></audio>
-      <div   class="pnotes"><p>here is some text</p></div>
-      <div   class="pnotes"><p>here is some and some more text</p></div>
-    </section>
-
-    <!-- =============================================================================== -->
-
-    <section class="s_shadow" data-transition="fade" data-duration="2000" style="background-image: url(images/textures/rust.jpg)" data-title="Tite of Slide 1">
-      <h1>Some Features of Mathigon Slideshows</h1>
-      <div class="col_left">
-        <img src="resources/fruit.jpg" width="640" height="626" alt="fruit">
-      </div>
-      <div class="col_right">
-        <p>The slideshows can consist of any HTML content. Styles, animations and effects can be customised entirely using CSS and JavaScript.</p>
-        <p>Some other features include</p>
-        <ul>
-          <li>Many template slide designs, backgrounds, images, transitions and effects, including everything used in this slideshow,</li>
-          <li>Presenter notes and spoken narration which can both be disabled by the user,</li>
-          <li>Full screen, where supported by browser,</li>
-          <li>Mobile and mobile app capable, including a fluid layout adjusting to the browser size,</li>
-          <li>Preloading of images in slides nearby.</li>
-        </ul>
-      </div>
     </section>
 
     <!-- =============================================================================== -->
       
-    <section class="s_shadow" data-transition="fade" data-duration="2000" style="background-image: url(images/textures/rust.jpg)" data-title="Tite of Slide 1">
+    <section class="s_shadow" data-transition="objects" data-duration="2000" style="background-image: url(images/textures/bamboo-1.jpg)" data-title="Basic Syntax">
       <h1>The Basic Syntax</h1>
       <div class="col_full">
         <p>Every slide is represented by a new <code>section</code> HTML tag, as shown below:</p>
@@ -238,60 +254,80 @@
             &lt;div&gt;
           </code>
         </div>
-        <p>The <code>data-ratio</code> attribute for <code>&lt;section&gt;</code> is optional. If missing the slide will always wrap to the window width and height.</p>
+        <p>The <code>data-ratio</code> attribute for <code>&lt;stage&gt;</code> gives the slide aspect ratio. It is optional; if missing the slide will wrap to the window width and height.</p>
       </div>
     </section>
 
     <!-- =============================================================================== -->
 
-    <section data-transition="coverleft" data-duration="2000" style="background-image: url(images/textures/bamboo-1.jpg)">
-      <h1>Different Kinds of Cars</h1>
-      <div class="col_full" style="padding: 1%; background: #C00;">
-		Here is some text
-	  </div>
+    <section data-transition="objects" data-duration="2000" style="background-image: url(images/textures/bamboo-1.jpg)" data-title="<section> Tag Attributes">
+      <h1>The <code>&lt;section&gt;</code> tag attributes</h1>
+      <div class="col_full">
+        <p>There are many additional attributes for the <code>section</code> tags:</p>
+      
+        <div class="codebox">
+          <code>&lt;section<br>
+&nbsp; &nbsp; data-title=&quot;Tite of Slide&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// slide title; default is no title<br>
+&nbsp; &nbsp; data-transition=&quot;fade&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// transition; default is no transition<br>
+&nbsp; &nbsp; data-duration=&quot;2000&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// transition duration; default is 0<br>
+&nbsp; &nbsp; class=&quot;s_shadow&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // useful for adding css styles to many slides<br>
+&nbsp; &nbsp; style=&quot;background-image: url(bg.jpg)&quot;&nbsp;&nbsp;// add styles to individual slides<br>
+&nbsp;          &gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Here is some text&lt;/p&gt;<br>
+            &lt;/section&gt;<br>
+          </code>
+        </div>
+        <p>Since the slide is scaled to fit the browser it is important to get the background style rules right. By default, the background scales to cover the slide. If a tiling image is used, include a <code>background-size</code> rule.</p>
+        <p>On the next slide you can find a list of all possible slide transitions.</p>
+      </div>
+    </section>
+
+    <!-- =============================================================================== -->
+    
+    <section data-transition="fade" data-duration="2000" style="background-image: url(images/textures/bamboo-1.jpg)">
+      <div class="frame">
+        <h1>Slide Transitions</h1>
+      </div>
+    </section>  
+
+    <!-- =============================================================================== -->
+
+    <section data-transition="fade" data-duration="2000" style="background-image: url(images/textures/bamboo-1.jpg)">
+      <div class="frame">
+        <h1>Animations and JavaScript Effects</h1>
+      </div>
+    </section>  
+
+    <!-- =============================================================================== -->
+    
+    <section data-transition="fade" data-duration="2000" style="background-image: url(images/textures/bamboo-1.jpg)">
+      <div class="frame">
+        <h1>Presenter Notes and Narration</h1>
+      </div>
+    </section>  
+
+    <!-- =============================================================================== -->
+    
+    <section data-transition="fade" data-duration="2000" style="background-image: url(images/textures/bamboo-1.jpg)">
+      <h1>Roadmap</h1>
       <div class="col_left">
-        <p>Here is a list of many different kinds of fruit which may be useful in some cases:</p>
-        <p>Paragraph 1</p>
-        <p>Paragraph 2</p>
-      </div>
-      <div class="col_right">
-        <p>Paragraph 1</p>
-      </div>
-    </section>
-
-    <!-- =============================================================================== -->
-    
-    <section data-transition="fade" data-duration="2000" style="background: #CC0">
-      <div class="frame">
-        <h1>Slide 4</h1>
-      </div>
-    </section>  
-
-    <!-- =============================================================================== -->
-    
-    <section data-transition="fade" data-duration="2000" style="background: #CCC">
-      <div class="frame">
-        <h1>Slide 5</h1>
+        <ul>
+          <li>Additional animation effects and slide transitions, maybe using HTML5 Canvas.</li>
+          <li>Easier HTML Syntax, more content to be created using JS.</li>
+          <li>WYSIWUG user interface for creating slideshows.</li>
+        </ul>
       </div>
     </section>  
     
-    <section data-transition="fade" data-duration="2000" style="background: #C0C">
-      <div class="frame">
-        <h1>Slide 6</h1>
-      </div>
-    </section>  
-    
-    <section data-transition="fade" data-duration="2000" style="background: #0CC">
-      <div class="frame">
-        <h1>Slide 7</h1>
-      </div>
-    </section>  
-              
 </div>
 
 </body>
 
 <!-- Scripts -->
+<script> 
+	var prevs = "resources/alice/previews/"
+</script>
+
 <script src="scripts/jquery.js"    ></script>
 <script src="scripts/jqueryUI.js"  ></script>
 <script src="scripts/dragdealer.js"></script>
