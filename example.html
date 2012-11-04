@@ -55,6 +55,16 @@
   <!--  Additional Styles -->
   <style>
 	.feature { width: 39%; height: auto; position: absolute; border-radius: 8px; box-shadow: 0 2px 10px #000; -webkit-box-shadow: 0 2px 10px #000; -moz-box-shadow: 0 2px 10px #000; display: none;}
+	
+	.ani {
+		color: #C00;
+		text-decoration: underline;
+		cursor: pointer;	
+	}
+	
+	.ani:hover {
+		color: #900;	
+	}
   </style>
     
   <!-- Webfonts -->
@@ -177,11 +187,11 @@
       <h2 class="subtitle">Syntax, Styles and Animations</h1>-->
 
       <div   class="pnotes">
-        <p>Welcome!<br>Mathigon Slideshows is a powerful framework for creating HTML slideshows on the web. It was initially created as part of the Mathigon project to make engaging mathematics lessons that can be watched by students or be presented by teachers in classrooms.</p>
+        <p>Welcome!<br>Mathigon Slideshows is a powerful framework for making HTML slideshows on the web. It was created as part of the Mathigon project to make engaging mathematics lessons that can be watched by students at home or be presented by teachers in classrooms.</p>
         <p>Click anywhere on the slide to show the toolbars and use the top buttons to toggle narration and presenter notes. Use the keyboard arrows to navigate; on mobile devices simply swipe.</p>
       </div>
       
-      <audio class="saudio"><source src="resources/intro.mp3" type="audio/mpeg"></audio>
+      <audio class="saudio"><source src="resources/example/narration/intro.mp3" type="audio/mpeg"></audio>
       
 	  <script> var xSteps0 = function(x) { switch(x) {
 		  case 0:     setTimeout( function(){$('#title').buildIn('lenseFlare',2000);}, 1000 ); break;
@@ -193,9 +203,9 @@
   
     <!-- =============================================================================== -->
   
-    <section class="" data-transition="color" data-duration="2000" style="background-image: url(resources/example/fireworks.jpg)" data-title="Introduction">
+    <section class="" data-transition="color" data-duration="2000" style="background-image: url(resources/example/fireworks.jpg)" data-title="Features">
 
-      <h1 id="f0" style="color: #FFF; position: absolute; left: 30%; top: 3%; text-shadow: 0 1px 8px #000, 0 1px 8px #000; font-size: 3em;">Features</h1>
+      <h1 id="f0" style="color: #FFF; position: absolute; left: 30%; top: 3%; text-shadow: 0 1px 8px #000, 0 1px 8px #000; font-size: 3em; display: none;">Features</h1>
 
       <img id="f1" class="feature" src="resources/example/features/f1.png" width="500" height="200" alt="" style="top: 27%; left: 7%;">
       <img id="f2" class="feature" src="resources/example/features/f2.png" width="500" height="200" alt="" style="top: 44%; left: 9%;">
@@ -207,7 +217,7 @@
       <img id="f8" class="feature" src="resources/example/features/f8.png" width="500" height="200" alt="" style="top: 67%; left: 52%;">
  
       <div class="pnotes"><p>Slides can consist of any HTML content, including videos, forms or iframes. They can be customised entirely using JavaScript and CSS.</p></div>
-      <div class="pnotes"><p>You can embed spoken narration as well as presenter notes, and users and disable these independently.</p></div>
+      <div class="pnotes"><p>You can embed spoken narration as well as presenter notes, and users can disable these independently.</p></div>
       <div class="pnotes"><p>Mathigon Slideshows are fully mobile and WebApp capable. They fluidly adjust to the window or screen size: try resizing your browser!</p></div>
       <div class="pnotes"><p>With Mathigon Slideshows included are many amazing effects, animations, transitions and designs. We are constantly adding more, and it is easy to customise them in JavaScript.</p></div>
       <div class="pnotes"><p>You can navigate the slideshow using keyboard shortcuts, the toolbars, a slider or mobile gestures.</p></div>
@@ -215,20 +225,29 @@
       <div class="pnotes"><p>You can link to individual slides by using hashes in the URL.</p></div>
       <div class="pnotes">
         <p>And the slideshows even have a full screen button.</p>
-        <p>This presentation gives an overview of the underlying syntax and how you can create your own slideshows. Remember to download all source files from <a href="http://www.mathigon.org/slideshows">mathigon.org/slideshows</a>.</p>
+        <p>This presentation gives an overview of the underlying syntax and how you can create your own slideshows. Remember to watch examples and download all source files from <a href="http://www.mathigon.org/slideshows">mathigon.org/slideshows</a>.</p>
       </div>
+
+      <audio class="saudio"><source src="resources/example/narration/f1.mp3" type="audio/mpeg"></audio>
+      <audio class="saudio"><source src="resources/example/narration/f2.mp3" type="audio/mpeg"></audio>
+      <audio class="saudio"><source src="resources/example/narration/f3.mp3" type="audio/mpeg"></audio>
+      <audio class="saudio"><source src="resources/example/narration/f4.mp3" type="audio/mpeg"></audio>
+      <audio class="saudio"><source src="resources/example/narration/f5.mp3" type="audio/mpeg"></audio>
+      <audio class="saudio"><source src="resources/example/narration/f6.mp3" type="audio/mpeg"></audio>
+      <audio class="saudio"><source src="resources/example/narration/f7.mp3" type="audio/mpeg"></audio>
+      <audio class="saudio"><source src="resources/example/narration/f8.mp3" type="audio/mpeg"></audio>
  
       <script> var xSteps1 = function(x) { switch(x) {
 		  case 0:     $('#f0').buildIn('fade',1000);
-		              $('#f1').buildIn('flipHorizontal',1000); break;
+		              $('#f1').buildIn('flipHorizontal',2000); break;
 		  case 1:     $('#f2').buildIn('blur',1000); break;
 		  case 2:     $('#f3').buildIn('rotateDown',1000); break;
 		  case 3:     $('#f4').buildIn('flyLeft',1000); break;
 		  case 4:     $('#f5').buildIn('drop',1000); break;
-		  case 5:     $('#f6').buildIn('pop',1000); break;
+		  case 5:     $('#f6').buildIn('flip3DHorizontal',1000); break;
 		  case 6:     $('#f7').buildIn('spinUp',1000); break;
 		  case 7:     $('#f8').buildIn('wipeLeft',1000); break;
-		  case 'x':   $('.feature').css('display','none'); break;
+		  case 'x':   $('.feature, #f0').css('display','none'); break;
 		  case 'max': return 7; break;
 	  }} </script>
     </section>
@@ -284,38 +303,104 @@
 
     <!-- =============================================================================== -->
     
-    <section data-transition="fade" data-duration="2000" style="background-image: url(images/textures/bamboo-1.jpg)">
+    <section data-transition="slideLeft" data-duration="2000" style="background-image: url(images/textures/bamboo-1.jpg)" data-title="Transitions">
       <div class="frame">
         <h1>Slide Transitions</h1>
+        <div class="col_left">
+          <h2>Existing Transitions</h2>
+          <p>none (default),</p>
+          <p>fade,</p>
+          <p>objects,</p>
+          <p>color (specify <em>data-viacolor</em>, default is black),</p>
+          <p>slideLeft, slideRight, slideUp, slideDown,</p>
+          <p>coverLeft, coverRight, coverUp, coverDown,</p>
+          <p>revealLeft, revealRight, revealUp, revealDown,</p>
+          <p>wipeHorizontal, wipeVertical (Beta)</p>
+        </div>
+        <div class="col_right">
+          <h2>Coming in Version 1.1</h2>
+          <p>zoomUp, zoomDown, rotateUp, rotateDown</p>
+          <p>3D transitions (cube*, raise*, fall*, flip*, swap)</p>
+          <p>Filter transitions (blur, flash)</p>
+          <p>Canvas transitions (advanced wipes, mosaic)<br>
+          <em>These will, temporarily, render slides as canvas to allow for more advanced transitions.</em></p>
+        </div>
       </div>
     </section>  
 
     <!-- =============================================================================== -->
 
-    <section data-transition="fade" data-duration="2000" style="background-image: url(images/textures/bamboo-1.jpg)">
+    <section data-transition="coverUp" data-duration="2000" style="background-image: url(images/textures/bamboo-1.jpg)" data-title="Animations">
       <div class="frame">
         <h1>Animations and JavaScript Effects</h1>
+      <div class="col_full">
+        <p>Steps and animations can be added by defining a <code>xStepsi</code> function, where the <code>i</code> should be replaced by the slide number (starting from 0).</p>
+        <div class="codebox">
+          <code>
+            &lt;script&gt; var xSteps1 = function(x) { switch(x) {<br>
+		    &nbsp;&nbsp;case 0: &nbsp;&nbsp;&nbsp; /*Code for slide load*/ break;<br>
+		    &nbsp;&nbsp;case 1: &nbsp;&nbsp;&nbsp; /*Code for step 1*/ break;<br>
+		    &nbsp;&nbsp;case 2: &nbsp;&nbsp;&nbsp; /*Code for step 2*/ break;<br>
+		    &nbsp;&nbsp;case 'x': &nbsp; /*Code to reset the slide to original state*/ break;<br>
+		    &nbsp;&nbsp;case 'max': return 2; break;<br>
+	        }} &lt/script&gt;
+          </code>
+        </div>
+        <p>Here, case 0 is executed on slide load, cases 1, 2, ... are executed at the individual steps, case 'x'resets the slide to the original position and case 'max' returns the number of slide steps. The latter is useful if some of the step cases are empty.</p>
+        <p>On the following slide there is an overview of all the existing animation effects.</p>
+      </div>
       </div>
     </section>  
 
     <!-- =============================================================================== -->
     
-    <section data-transition="fade" data-duration="2000" style="background-image: url(images/textures/bamboo-1.jpg)">
+    <section data-transition="revealRight" data-duration="2000" style="background-image: url(images/textures/bamboo-1.jpg)" data-title="Effects">
       <div class="frame">
-        <h1>Presenter Notes and Narration</h1>
+        <h1>Mathigon Animations</h1>
+        <div class="col_left" style="width: 55%; font-size: 0.9em">
+          <p>Animations are called with <code>$('#id').buildIn('transition',time, 'easing')</code> and similarly for <code>buildOut</code>. All attributes are optional, the default is <code>.buildIn('appear',1000,'swing')</code>. Supported transition values are:</p>
+          <p><span class="ani">appear</span>, <span class="ani">fade</span>, <span class="ani">zoomUp</span>, <span class="ani">zoomDown</span>, <span class="ani">rotate</span>, <span class="ani">rotateUp</span>, <span class="ani">rotateDown</span>, <span class="ani">spin</span>, <span class="ani">spin</span>, <span class="ani">spinDown</span>, <span class="ani">flipHorizontal</span>, <span class="ani">flipVertical</span>, <span class="ani">stretchHorizontal</span>, <span class="ani">stretchVertical</span>, <span class="ani">expandHorizontal</span>, <span class="ani">expandVertical</span>, <span class="ani">flip3DHorizontal</span>, <span class="ani">flip3DVertical</span>, <span class="ani">blur</span>, <span class="ani">pop</span></p>
+          <p><em>Require absolute positioning:</em><br><span class="ani">fadeLeft</span>, <span class="ani">fadeRight</span>, <span class="ani">fadeUp</span>, <span class="ani">fadeDown</span>, <span class="ani">flyLeft</span>, <span class="ani">flyRight</span>, <span class="ani">flyTop</span>, <span class="ani">flyBottom</span>, <span class="ani">flyTopRight</span>, <span class="ani">flyTopLeft</span>, <span class="ani">flyBottomRight</span>, <span class="ani">flyBottomLeft</span>, <span class="ani">wipeLeft</span>, <span class="ani">wipeTop</span>, <span class="ani">lenseFlare</span>, <span class="ani">drop</span></p>
+          <p>Not all animations support their buildOut counterpart (yet). Supported easing values are 'linear', 'swing', 'Bounce', 'Quad', 'Quint', 'Sine', 'Cubic', 'Expo', 'Back', 'Quart', 'Circ', 'Elastic'. Many more animations will be coming in version 1.1.</p>
+        </div>
       </div>
+      <img id="star" src="resources/example/mathigon.png" width="380" height="380" style="width: 32%; height: 54%; top:30%; right: 2%;">
     </section>  
 
     <!-- =============================================================================== -->
     
-    <section data-transition="fade" data-duration="2000" style="background-image: url(images/textures/bamboo-1.jpg)">
+    <section data-transition="fade" data-duration="2000" style="background-image: url(images/textures/bamboo-1.jpg)" data-title="Notes and Narration">
+      <h1>Presenter Notes and Narration</h1>
+      <div class="col_full">
+        <p>Presenter notes and spoken narration can be added anywhere in the <code>&lt;section>&gt;</code> elements, in the correct order. If certain steps require none, it is necessary to add an empty element. The number of steps always needs to be specified using the <code>'max'</code> case as before.</p>
+        <div class="codebox">
+          <code>
+            &lt;div class="pnotes"&gt;<br>
+            &nbsp;&nbsp;&lt;p&gt;And the slideshows even have a full screen button.&lt;/p&gt;<br>
+            &lt;/div&gt;<br><br>
+            &lt;audio class="saudio"&gt;<br>
+            &nbsp;&nbsp;&lt;source src="resources/example/narration/f0.mp3" type="audio/mpeg"&gt;<br>
+            &lt;/audio&gt;
+
+          </code>
+        </div>
+      </div>
+    </section>  
+  
+    <!-- =============================================================================== -->
+    
+    <section data-transition="slideDown" data-duration="2000" style="background-image: url(images/textures/bamboo-1.jpg)" data-title="Roadmap">
       <h1>Roadmap</h1>
       <div class="col_left">
         <ul>
-          <li>Additional animation effects and slide transitions, maybe using HTML5 Canvas.</li>
-          <li>Easier HTML Syntax, more content to be created using JS.</li>
+          <li>Improve Syntax, with more HTML code to be generated by JavaScript;</li>
+          <li>Improve print stylesheet;</li>
+          <li>Additional slide transitions and object effects, some of them to be rendered using HTML Canvas;</li>
           <li>WYSIWUG user interface for creating slideshows.</li>
         </ul>
+      </div>
+      <div class="col_right">
+        <img src="resources/example/code.jpg" width="500" height="500" alt="">
       </div>
     </section>  
     
@@ -325,12 +410,19 @@
 
 <!-- Scripts -->
 <script> 
-	var prevs = "resources/alice/previews/"
+	var prevs = "resources/example/icons/";
 </script>
 
 <script src="scripts/jquery.js"    ></script>
 <script src="scripts/jqueryUI.js"  ></script>
 <script src="scripts/dragdealer.js"></script>
 <script src="scripts/main.js"      ></script>
+
+<script> 
+	$('.ani').click( function(){
+		var trans = $(this).html();
+		$('#star').buildIn(trans);
+	})
+</script>
 
 </html>

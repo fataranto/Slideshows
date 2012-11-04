@@ -208,7 +208,16 @@ function goTo(m) { if (m != n_slide &&  m >= 0 && m <= max_sld) {
 			setTimeout( function() { s_old.css('display','none') } , durat );
 			break;
 
-		case 'objects': //TO BE EDITED
+		case 'objects':
+			s_old.children().fadeOut(durat/2);
+			setTimeout( function() {
+				s_old.css('display','none')
+				s_old.children().fadeIn(1);
+				s_new.css('display','block')
+				s_new.children().css('display','none').fadeIn(durat/2);
+			} , durat/2 );
+			break;
+		/*case 'objects':
 			s_old.children().fadeOut(durat/2);
 			setTimeout( function() {
 				s_old.css('display','none')
@@ -221,7 +230,7 @@ function goTo(m) { if (m != n_slide &&  m >= 0 && m <= max_sld) {
 					}
 				});
 			} , durat/2 );
-			break;
+			break; */
 
 		case 'color':
   			$('#stage').css('background-color',(s_old.attr('data-viacolor') || '#000'));
@@ -291,23 +300,23 @@ function goTo(m) { if (m != n_slide &&  m >= 0 && m <= max_sld) {
 
 		// REVEAL TRANSITIONS -----------------------------------------------------------------------------
 		case 'revealLeft':
-			s_old.css({'z-index':'10','left':'0%'});
-  			s_new.css({'z-index':'00', 'display':'block'}).animate({'left':'-100%'},durat);
+			s_old.css({'z-index':'10','left':'0%'}).animate({'left':'-100%'},durat);
+  			s_new.css({'z-index': '5', 'display':'block'});
 			setTimeout( function() { s_old.css({'display':'none','left':'0'}); }, durat+5 );
 			break;
 		case 'revealRight':
-			s_old.css({'z-index':'10','left':'0%'});
-  			s_new.css({'z-index':'00', 'display':'block'}).animate({'left':'100%'},durat);
+			s_old.css({'z-index':'10','left':'0%'}).animate({'left':'100%'},durat);
+  			s_new.css({'z-index': '5', 'display':'block'});
 			setTimeout( function() { s_old.css({'display':'none','left':'0'}); }, durat+5 );
 			break;
 		case 'revealUp':
-			s_old.css({'z-index':'10','top':'0%'});
-  			s_new.css({'z-index':'00', 'display':'block'}).animate({'top':'-100%'},durat);
+			s_old.css({'z-index':'10','top':'0%'}).animate({'top':'-100%'},durat);
+  			s_new.css({'z-index': '5', 'display':'block'});
 			setTimeout( function() { s_old.css({'display':'none','top':'0'}); }, durat+5 );
 			break;
 		case 'revealDown':
-			s_old.css({'z-index':'10','top':'0%'});
-  			s_new.css({'z-index':'00', 'display':'block'}).animate({'top':'-100%'},durat);
+			s_old.css({'z-index':'10','top':'0%'}).animate({'top':'-100%'},durat);
+  			s_new.css({'z-index': '5', 'display':'block'});
 			setTimeout( function() { s_old.css({'display':'none','top':'0'}); }, durat+5 );
 			break;
 
@@ -403,14 +412,15 @@ function goTo(m) { if (m != n_slide &&  m >= 0 && m <= max_sld) {
 
 			var $this   = $(this);
 			var Wx      = $('#stage').width();
+			var Hx      = $('#stage').height();
 			$this.css({'display':'block','opacity':'1','visibility':'hidden','position':'absolute'});
 
 			var $width  = $this.width();
 			var $height = $this.height();
 			var $left   = $this.position().left;
 			var $top    = $this.position().top;
-			var $right  = Wx - $left  - $width;
-			var $bottom = Wx - $right - $height;
+			var $right  = Wx - $left - $width;
+			var $bottom = Hx - $top  - $height;
 
 			var iWidth  = $this.css('width');
 			var iHeight = $this.css('height');
@@ -1120,7 +1130,7 @@ function aspectRatio() {
 
 
 // ====================================================================================
-// SLIDE ASPECT RATIO
+// VIDEO LOADING SCREEN
 
 function vidPoster(id) {
 	var vid = $(id)
